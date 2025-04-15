@@ -1,0 +1,171 @@
+/* style.css */
+
+/* global styles */
+
+html,
+body {
+    height: 100%;
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Layout containers */
+
+/* header */
+header {
+    width: 100%;
+    background-color: none;
+    margin: 0 auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+main {
+    flex: 1;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.switch input {
+    display: none;
+}
+
+/* slider for light dark toggle */
+.slider {
+    width: 47px;
+    height: 24px;
+    background-color: #ccc;
+    display: block;
+    border-radius: 25px;
+    position: relative;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 2.5px;
+    top: 2.5px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.1s;
+}
+
+.switch input:checked+.slider {
+    background-color: #66b2ff;
+}
+
+.switch input:checked+.slider::before {
+    transform: translateX(25px);
+}
+
+#color-mode-switch {
+    background-color: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: flex-end;
+    padding: 5px 5px;
+}
+
+#color-mode-switch svg {
+    display: flex;
+    align-items: center;
+    width: 23px;
+    height: 23px;
+}
+
+/* dark mode style */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    color: #e0e0e0;
+    border-color: #333;
+    box-shadow: none;
+}
+
+body.dark-mode section,
+body.dark-mode footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #333;
+    box-shadow: none;
+}
+
+body.dark-mode #color-mode-switch {
+    background-color: none;
+}
+
+body.dark-mode nav a {
+    color: #66b2ff;
+}
+
+body.dark-mode nav a:hover {
+    text-decoration: underline;
+}
+
+body.dark-mode footer {
+    color: #999;
+}
+
+/* navigation bar */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0066cc;
+    font-size: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* sections */
+section {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/*  footer */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: auto;
+    padding: 2px 0;
+    background-color: rgba(255, 0, 0, 0.05);
+}
